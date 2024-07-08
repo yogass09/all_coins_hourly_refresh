@@ -1,13 +1,13 @@
 # Libraries
 library(DBI)
 library(odbc)
-library(dplyr)
+
 library(crypto2)
 
 # Daily Refresh for BTC
 coin_list_all <- crypto_list(only_active = TRUE)
 
-all_coins<-crypto_history(coin_list = coin_list_all,convert = "USD",limit = 10000, interval= "1h",
+all_coins<-crypto_history(coin_list = coin_list_all,convert = "USD",limit = 1, interval= "1h",
                           sleep = 1, start_date = Sys.Date()-1, end_date = Sys.Date()+1)
 
 # Set up your Azure SQL Database connection
