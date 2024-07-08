@@ -48,7 +48,7 @@ con <- dbConnect(odbc::odbc(), Driver = "ODBC Driver 17 for SQL Server",
 
 
 # Write data to the SQL database
-dbWriteTable(con, "hourly_all_coins_ohlcv", df10, append = TRUE)
+dbWriteTable(con, "hourly_all_coins_ohlcv", hourly_all_coins, append = TRUE)
 
 # Disconnect from the database
 dbDisconnect(con)
