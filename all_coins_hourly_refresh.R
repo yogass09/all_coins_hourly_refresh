@@ -8,7 +8,7 @@ library(crypto2)
 coin_list_all <- crypto_list(only_active = TRUE)
 
 all_coins<-crypto_history(coin_list = coin_list_all,convert = "USD",limit = 10000, interval= "1h",
-                          sleep = 1, start_date = Sys.Date()-2, end_date = Sys.Date())
+                          sleep = 1, start_date = Sys.Date()-1, end_date = Sys.Date()+1)
 
 # Set up your Azure SQL Database connection
 con <- dbConnect(odbc::odbc(), Driver = "ODBC Driver 17 for SQL Server",
@@ -17,7 +17,7 @@ con <- dbConnect(odbc::odbc(), Driver = "ODBC Driver 17 for SQL Server",
 
 
 # Write data to the SQL database
-dbWriteTable(con, "all_coins_ohlcv", all_coins, append = TRUE)
+dbWriteTable(con, "hourly_all_coins_ohlcv", all_coins, append = TRUE)
 
 # Disconnect from the database
 dbDisconnect(con)
