@@ -2,7 +2,7 @@ name: Update data
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # Runs daily at midnight UTC. Adjust as needed.
+    - cron: "*/5 * * * *"  # Runs daily at midnight UTC. Adjust as needed.
   workflow_dispatch: {}
   push:
     branches:
