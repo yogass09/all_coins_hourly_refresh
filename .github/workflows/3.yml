@@ -32,4 +32,4 @@ jobs:
 
       - name: Run R script
         run: |
-          Rscript 3_hourly_refresh.R
+          Rscript 3_hourly.R
