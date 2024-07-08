@@ -21,17 +21,8 @@ coin_list_all <- crypto_listings(
 )
 
 
-# Assuming coin_list_all is already loaded in your R environment
-
-# Dataframes for ranks 1-100, 101-200, ..., 901-1000
-dfs <- list()
-
-for (i in 0:9) {
-  start_rank <- i * 100 + 1
-  end_rank <- (i + 1) * 100
-  df_name <- paste0("df", i + 1)
-  dfs[[df_name]] <- coin_list_all %>% filter(cmc_rank >= start_rank & cmc_rank <= end_rank)
-}
+# Dataframe 7: Ranks 601-700
+df7 <- coin_list_all %>% filter(cmc_rank >= 601 & cmc_rank <= 700)
 
 
 ##
