@@ -2,7 +2,7 @@ name: Update data for 1.r
 
 on:
   schedule:
-    - cron: "*/5 0 * * *"  # Runs daily at midnight UTC. Adjust as needed.
+    - cron: "0 0 1 * *"  # Runs daily at midnight UTC. Adjust as needed.
   workflow_dispatch: {}
   push:
     branches:
@@ -33,3 +33,12 @@ jobs:
       - name: Run R script
         run: |
           Rscript 1_hourly.R
+          Rscript 2_hourly.R
+          Rscript 3_hourly.R
+          Rscript 4_hourly.R
+          Rscript 5_hourly.R
+          Rscript 6_hourly.R
+          Rscript 7_hourly.R
+          Rscript 8_hourly.R
+          Rscript 9_hourly.R
+          Rscript 10_hourly.R
